@@ -21,9 +21,6 @@ grad = zeros(size(theta));
 %
 
 h = sigmoid(X * theta);
-%J = sum(y' * log(h) - (1 - y)' * log(1 - h))/m;
-%grad = sum(X .* repmat((h - y),1, size(X,2)))/m;
-
 J = (1 / m) * ((-y' * log(h)) - (1 - y)' * log(1 - h));
 grad = (1 / m) * (h - y)' * X;
 
